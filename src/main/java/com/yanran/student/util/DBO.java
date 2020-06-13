@@ -14,14 +14,14 @@ public class DBO {
 	
 	private static JdbcConnectionPool jdbcCP = null;
 	static {
-		/*try {
+		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
-		}*/
-		String dbPath ="./config/test";
+		}
+		/*String dbPath ="./config/test";
 		jdbcCP = JdbcConnectionPool.create("jdbc:h2:" + dbPath, "sa", "");
-        jdbcCP.setMaxConnections(50);
+        jdbcCP.setMaxConnections(50);*/
 	}
 	
 
@@ -30,9 +30,9 @@ public class DBO {
 		Connection conn = null;
 		try {
 			//real is oracle 
-			//conn = (DBO) DriverManager.getConnection(url, username, password);
+			conn = DriverManager.getConnection(url, username, password);
 			//just demo for h2
-			conn = jdbcCP.getConnection();
+			//conn = jdbcCP.getConnection();
 			
 		} catch (Exception e) {
 			e.printStackTrace();
