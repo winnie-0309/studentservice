@@ -1,4 +1,4 @@
-package test;
+package com.yanran.student.model;
 
 public class Student {
     private int id;
@@ -50,6 +50,14 @@ public class Student {
 	public void setAddress(String address) {
 		this.address = address;
 	}
+	
+	@Override
+	public String toString() {
+		return "Student [id=" + id + ", sid=" + sid + ", name=" + name + ", password=" + password + ", gender=" + gender
+				+ ", birthday=" + birthday + ", address=" + address + "]";
+	}
+	
+	
 	
     
 }

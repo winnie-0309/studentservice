@@ -3,8 +3,7 @@
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
-
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!DOCTYPE html>
 <html>
   <head>
     <base href="<%=basePath%>">
@@ -15,14 +14,17 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta http-equiv="expires" content="0">    
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 	<meta http-equiv="description" content="This is my page">
-	<!--
-	<link rel="stylesheet" type="text/css" href="styles.css">
-	-->
+	
+	<link rel="stylesheet" type="text/css" href="css/student.css">
+	
   </head>
   
   <body>
     <h1>学生管理系统</h1>
-    <a href="">登陆</a>
-    <a href="/servelet/register.java">注册</a>
+    <a href="<%=basePath%>servlet/homePage?type=student">学生登陆</a>
+    <a href="<%=basePath%>servlet/homePage?type=teacher">老师登陆</a>
+    <a href="<%=basePath%>testservlet/register.java?type=student">学生注册</a>
+    <a href="<%=basePath%>testservlet/register.java?type=teacher">老师注册</a>
   </body>
+  
 </html>
