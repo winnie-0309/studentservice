@@ -26,8 +26,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <body>
   <h1>教师登陆</h1>
     <div id="login">  
-        <h1>Login</h1>  
-        <form action="<%=basePath%>servlet/login" method="post">  
+        <h1>Login</h1> 
+         <H3><%=request.getAttribute("error") %></H3>  
+        <form action="<%=basePath%>servlet/checkLogin?type=teacher" method="post">  
             <input type="text" required="required" placeholder="用户名" name="username"></input>  
             <input type="password" required="required" placeholder="密码" name="password"></input>
             <input name="checkcode" type="text" id="checkCode" title="验证码区分大小写" size="8",maxlength="4"/>

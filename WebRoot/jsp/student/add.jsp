@@ -1,7 +1,7 @@
 <%@ page language="java" pageEncoding="UTF-8"%>
 <%@ page import="java.util.*" %>
-<%@ page import="com.yanran.student.model.*" %>
-<%@ page import="com.yanran.student.util.*" %>
+<%@ page import="com.model.*" %>
+<%@ page import="com.util.*" %>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -10,14 +10,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <html>
   <head>
     <base href="<%=basePath%>">
-    <title>Home Page</title>
+    <title>新增学生</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 	<link rel="stylesheet" type="text/css" href="../css/student.css">
   </head>
 <body>
 	<div id="studentAdd">  
-        <h1>新增學生</h1>  
+        <h1>新增学生</h1>  
         <form action="<%=basePath%>servlet/action?action=save_student" method="post">  
-            <input type="text" required="required" placeholder="用户名" name="username"></input><br/>
+            <input type="text" required="required" placeholder="用户名" name="name"></input><br/>
             <input type="password" required="required" placeholder="密码" name="password"></input><br/>
             <input type="text" required="required" placeholder="性別" name="gender"></input><br/>
             <input type="text" required="required" placeholder="生日" name="birthday"></input><br/>
@@ -25,9 +26,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             <button class="but" type="submit">新增</button>  
         </form>  
     </div>  
-    
-	<form action="" method="post">
-	</form>
 	
 </body>
 </html>

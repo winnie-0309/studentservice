@@ -1,7 +1,7 @@
 <%@ page language="java" pageEncoding="UTF-8"%>
 <%@ page import="java.util.*" %>
-<%@ page import="com.yanran.student.model.*" %>
-<%@ page import="com.yanran.student.util.*" %>
+<%@ page import="com.model.*" %>
+<%@ page import="com.util.*" %>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -17,6 +17,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta http-equiv="expires" content="0">    
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 	<meta http-equiv="description" content="This is my page">
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 	<link rel="stylesheet" type="text/css" href="css/student.css">
   </head>
   
@@ -52,7 +53,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		     <td><%=rec.getId() %></td>
 		     <td><%=rec.getName() %></td>
 		     <td><%=rec.getAddress() %></td>
-		     <td><a href="<%=basePath%>servlet/action?action=update_student&id=<%=rec.getId()%>">修改</a><a href="<%=basePath%>servlet/action?type=update_student&id=rec.getId()">刪除</a></td>       
+		     <td><a href="<%=basePath%>servlet/action?action=update_student&id=<%=rec.getId()%>">修改</a><a href="<%=basePath%>servlet/action?action=delete_student&id=<%=rec.getId()%>">刪除</a></td>       
 		  </tr>
 		  <%
 		        }
